@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
+      import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js'
+      import { getAuth } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js'
+      import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js'
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: 'AIzaSyCnZ_6IB0RfqyKRvZ6jiP_Cl19cU0TNe48',
+        authDomain: 'todo-app-d90c9.firebaseapp.com',
+        projectId: 'todo-app-d90c9',
+        storageBucket: 'todo-app-d90c9.appspot.com',
+        messagingSenderId: '96444585481',
+        appId: '1:96444585481:web:991ac4888869734df80ad8',
+        measurementId: 'G-B5K27LKTQE',
+      }
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig)
+      const analytics = getAnalytics(app)
+      const auth = getAuth(app)
+      const db = getFirestore(app)
+    </script>
+
+    <script src="app.js" defer></script>
+  </head>
+  <body></body>
+</html>
