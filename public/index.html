@@ -1,40 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Firebase Hosting</title>
 
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js'
-      import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-analytics.js'
-      import { getAuth } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js'
-      import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js'
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: 'AIzaSyCnZ_6IB0RfqyKRvZ6jiP_Cl19cU0TNe48',
-        authDomain: 'todo-app-d90c9.firebaseapp.com',
-        projectId: 'todo-app-d90c9',
-        storageBucket: 'todo-app-d90c9.appspot.com',
-        messagingSenderId: '96444585481',
-        appId: '1:96444585481:web:991ac4888869734df80ad8',
-        measurementId: 'G-B5K27LKTQE',
-      }
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig)
-      const analytics = getAnalytics(app)
-      const auth = getAuth(app)
-      const db = getFirestore(app)
-    </script>
-
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.13.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.13.0/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.13.0/firebase-database-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.13.0/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.13.0/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.13.0/firebase-messaging-compat.js"
+    ></script>
+    <script defer src="/__/firebase/9.13.0/firebase-storage-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/9.13.0/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.13.0/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/9.13.0/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
     <script src="app.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js"
+      integrity="sha512-/seDHxVfh1NvFUscAj8GsHQVZJvr2jjAoYsNL7As2FCaFHUHYIarl3sRCvVlFgyouVNiRgHIebyLKjpgd1SLDw=="
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <h1>My Awesome App 🔥</h1>
+
+    <section id="whenSignedOut">
+      <button id="signInBtn" class="btn btn-primary">
+        Sign in with Google
+      </button>
+    </section>
+
+    <section id="whenSignedIn" hidden="true">
+      <div id="userDetails"></div>
+
+      <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>My Firestore Things</h2>
+
+      <ul id="thingsList"></ul>
+
+      <button id="createThing" class="btn btn-success">
+        Create Random Thing
+      </button>
+    </section>
+  </body>
 </html>
